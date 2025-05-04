@@ -105,6 +105,7 @@ import ProductsAffiliates from "./pages/affiliate/ProductsAffiliates";
 import MyProductsPage from "./pages/products/MyProductsPage";
 import RegisterProductPage from "./pages/products/RegisterProduct";
 import ViewProductPage from "./pages/products/ViewProductPage";
+import ReportsPage from "./pages/ReportsPage";
 import ProductGridPage from "./pages/store/ProductGridPage";
 
 function App() {
@@ -123,7 +124,6 @@ function App() {
         <Route exact path="/index-9" element={<HomePageNine />} />
         <Route exact path="/index-10" element={<HomePageTen />} />
         <Route exact path="/index-11" element={<HomePageEleven />} />
-
         {/* SL */}
         <Route exact path="/add-user" element={<AddUserPage />} />
         <Route exact path="/alert" element={<AlertPage />} />
@@ -155,22 +155,18 @@ function App() {
         <Route exact path="/form-layout" element={<FormLayoutPage />} />
         <Route exact path="/form-validation" element={<FormValidationPage />} />
         <Route exact path="/form" element={<FormPage />} />
-
         <Route exact path="/gallery" element={<GalleryPage />} />
         <Route exact path="/gallery-grid" element={<GalleryGridPage />} />
         <Route exact path="/gallery-masonry" element={<GalleryMasonryPage />} />
         <Route exact path="/gallery-hover" element={<GalleryHoverPage />} />
-
         <Route exact path="/blog" element={<BlogPage />} />
         <Route exact path="/blog-details" element={<BlogDetailsPage />} />
         <Route exact path="/add-blog" element={<AddBlogPage />} />
-
         <Route exact path="/testimonials" element={<TestimonialsPage />} />
         <Route exact path="/coming-soon" element={<ComingSoonPage />} />
         <Route exact path="/access-denied" element={<AccessDeniedPage />} />
         <Route exact path="/maintenance" element={<MaintenancePage />} />
         <Route exact path="/blank-page" element={<BlankPagePage />} />
-
         <Route exact path="/image-generator" element={<ImageGeneratorPage />} />
         <Route exact path="/image-upload" element={<ImageUploadPage />} />
         <Route exact path="/invoice-add" element={<InvoiceAddPage />} />
@@ -233,7 +229,6 @@ function App() {
         <Route exact path="/" element={<SignInPage />} />
         <Route exact path="/sign-up" element={<SignUpPage />} />
         <Route exact path="/forgot-password" element={<ForgotPasswordPage />} />
-
         {/* Rotas Privadas */}
         <Route
           exact
@@ -309,6 +304,15 @@ function App() {
         />
         <Route
           exact
+          path="/relatorios"
+          element={
+            <PrivateRoute>
+              <ReportsPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          exact
           path="/products/affiliates"
           element={
             <PrivateRoute>
@@ -316,7 +320,6 @@ function App() {
             </PrivateRoute>
           }
         />
-
         {/* Outras rotas públicas */}
         <Route exact path="/error" element={<ErrorPage />} />
         <Route exact path="/access-denied" element={<AccessDeniedPage />} />
